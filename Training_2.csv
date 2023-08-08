@@ -1,0 +1,1524 @@
+input,expected_outcomes
+Registered user should able to Verify Empty Cart Page And UI Elements in EN," Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user click on "" Account / Sign In ""
+    Then the user waits for webelement ""acl-mt--x-large acl-mx--medium"" with html attribute ""class"" to be visible
+    Then the user enters text ""<email>"" in the textbox ""Email Address""
+    Then the user enters text ""<password>"" in the textbox ""Password""
+    Then the user waits for webelement ""submit"" with html attribute ""type"" to be visible
+    Then the user clicks on the webelement with html tag ""type"" as ""submit""
+    Then the user waits for webelement ""Hi"" with html attribute ""data-title"" to be visible
+    Then the user checks if cart is empty
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user click on ""  Pick up In-Store: ""
+    Then the user validates if "" Pick Up In-Store: "" text is visible
+    Then the user checks if cart is empty
+    Then the user waits for webelement ""hdca-cart__user-message"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your cart is empty. "" text is visible
+    Then the user validates if ""0 item(s)"" text is visible
+    Then the user validates if ""Chat live with"" text is visible
+
+    Examples:
+      | email               | password |
+      | Maryam3@hotmail.com | Test@123 |"
+Guest user should able to buy bopis product with giftcard,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if "" Pick Up In-Store: "" text is visible
+    Then the user click on ""  Pick up In-Store: ""
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" at index ""1"" has text ""PICK-UP IN STORE:""
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small acl-bg-color--shade"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-flex acl-title"" is visible
+    Then the user clicks on the element with html tag ""class"" as ""item"" at index ""4""
+    Then the user click on ""Continue""
+    Then the user validates if "" Order will be picked up by: "" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user validates if ""Apply a Gift Card"" text is visible
+    Then the user click on ""Apply a Gift Card""
+    Then the user waits for webelement ""giftCardContainer"" with html attribute ""id"" to be visible
+    Then the user switches to the frame ""__zoid__gift_card_micro_ui""
+    Then the user enters text ""<cardNumber>"" in the textbox ""Card Number""
+    Then the user enters text ""<pin>"" in the textbox ""PIN""
+    Then the user switches to the parent frame
+    Then the user click on ""Check Balance""
+    Then the user waits for text ""Available Balance: "" to be visible
+    Then the user validates if ""Check New Balance"" text is visible
+    Then the user click on ""Apply""
+    Then the user waits for webelement ""acl-pb--medium hdca-gift-card-item"" with html attribute ""class"" to be visible
+    Then the user validates if "" Gift card ending in 1182 "" text is visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-display--flex acl-flex--row"" at index ""2"" has text ""remaining""
+    Then the user validates if ""$3.03"" text is visible
+    Then the user validates if ""Remove"" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-mt--xx-large acl-mb--large"" has text ""$0.00""
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""ctHidden acl-p--x-small"" with html attribute ""class"" to be visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in textbox with placeholder ""Enter your address...""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<postalCode>"" in the textbox ""Postal Code""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+
+    Examples:
+      | cardNumber              | pin  | firstName | lastName   | address            | city        | province | postalCode | phone      | extension |
+      | 98062361001791279001182 | 9127 | Testuser  | Automation | 428 Ellesmere Road | Scarborough | Ontario  | M1R 4E6    | 4704243224 | 8921      |"
+User should able to place order with paypal user information not allowed to edit returning from paypal,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for text "" Delivery "" to be visible
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user selects the radio button ""Standard Shipping:""
+    Then the user validates if the 'Standard Shipping:' radio button at index ""1"" is selected
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" at index ""1"" has text ""STANDARD SHIPPING:""
+    Then the user validates if "" Order Subtotal "" text is visible
+    Then the user validates if "" Standard Shipping "" text is visible
+    Then the user validates if "" Estimated Taxes "" text is visible
+    Then the user validates if "" Estimated Order Total "" text is visible
+    Then the user validates if "" Arrives By: "" text is visible
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small md:acl-p--medium"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in the textbox ""Address""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<postalCode>"" in the textbox ""Postal Code""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user enters text ""<Ext_Opt>"" in the textbox ""Ext. (Optional)""
+    Then the user click on ""Continue""
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-text-size--large acl-weight--regular"" at index ""2"" has text ""Edit""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-icon acl-tabs__item-icon-title""
+    Then the user clicks on the webelement with html tag ""classname"" as ""acl-ml--x-small acl-mb--x-small""
+    Then the user waits for webelement  ""Log in to your PayPal account"" with html attribute ""data-title"" to be visible
+    Then the user enters text ""<email>"" in textbox with placeholder ""Email or mobile number""
+    Then the user click on ""Next""
+    Then the user waits for webelement ""password"" with html attribute ""id"" to be visible
+    Then the user enters text ""<password>"" in textbox with placeholder ""Password""
+    Then the user click on ""Log In""
+    Then the user click on ""Complete Purchase""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+
+    Examples:
+      | firstName | lastName | address               | city        | province | postalCode | phone      | Ext_Opt | email           | password   |
+      | Test      | User     | Test 112 Lynnbrook dr | Scarborough | Ontario  | M1H2N1     | 4704243288 | 8921    | cabuyer4@thd.ca | homedepot! |"
+Registered user should able to buy STH as signIn user from OTC page placing order with Paypal in EN,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user click on "" Account / Sign In ""
+    Then the user waits for webelement ""acl-mt--x-large acl-mx--medium"" with html attribute ""class"" to be visible
+    Then the user waits for text ""Email Address"" to be visible
+    Then the user enters text ""<email>"" in the textbox ""Email Address""
+    Then the user enters text ""<password>"" in the textbox ""Password""
+    Then the user waits for webelement ""submit"" with html attribute ""type"" to be visible
+    Then the user clicks on the webelement with html tag ""type"" as ""submit""
+    Then the user validates if "" Hi John, My Account "" text is visible
+    Then the user checks if cart is empty
+    Then the user click on "" Hi John, My Account ""
+    Then the user click on ""Log Out""
+    Then the user validates if webelement with html attribute ""data-title"" as ""Hi"" is not visible
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user selects the radio button ""Standard Shipping:""
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user enters text ""<email>"" in the textbox ""Email Address""
+    Then the user enters text ""<password>"" in the textbox ""Password""
+    Then the user click on ""Sign In & Checkout""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user validates if ""Checkout"" text is visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" at index ""1"" has text ""STANDARD SHIPPING:""
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-card__header-title"" at index ""2"" has text ""Standard Shipping""
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in textbox with placeholder ""Enter your address...""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<postalCode>"" in the textbox ""Postal Code""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user waits for webelement ""acl-tabs__item"" with html attribute ""class"" to be visible
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-icon acl-tabs__item-icon-title""
+    Then the user clicks on the webelement with html tag ""classname"" as ""acl-ml--x-small acl-mb--x-small""
+    Then the user waits for webelement ""Log in to your PayPal account"" with html attribute ""data-title"" to be visible
+    Then the user enters text ""<paypalUserName>"" in textbox with placeholder ""Email or mobile number""
+    Then the user clicks on the webelement with html tag ""id"" as ""btnNext""
+    Then the user enters text ""<paypalPassword>"" in textbox with placeholder ""Password""
+    Then the user clicks on the webelement with html tag ""id"" as ""btnLogin""
+    Then the user click on ""Complete Purchase""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+
+    Examples:
+      | email             | password | paypalUserName  | paypalPassword | firstName | lastName    | address            | city        | province | phone      |postalCode |
+      | Marty51@gmail.com | Test@123 | cabuyer2@thd.ca | 11111111       | Testuser  | WebdriverIO | 428 Ellesmere Road | Scarborough | Ontario  | 4704243224 | M1R 4E6   |"
+"User should able to verify Appliance postalCode change, ATC Overlay, OrderSummary and Cart Page in EN","Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user waits for webelement ""appliancePostalCodeBox"" with html attribute ""id"" to be visible
+    Then the user enters text ""<postalCode>"" in textbox with placeholder ""A1A 1A1""
+    Then the user click on ""Submit""
+    Then the user waits for webelement ""hdca-product__description-fulfillment-paragraph--wrapper"" with html attribute ""class"" to be visible
+    Then the user validates if "" Earliest Delivery Date: "" text is visible
+    Then the user validates if ""Estimated Delivery Fee for"" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""delivery-cost-msg"" has text ""<postalCode>""
+    Then the user add product to cart
+    Then the user waits for webelement ""ng-trigger-modalTrans"" with html attribute ""class"" to be visible
+    Then the user validates if ""Protection Plan"" text is visible
+    Then the user validates if "" What's Covered? "" text is visible
+    Then the user validates if "" 4-Year Protection Plan "" text is visible
+    Then the user click on ""Add Protection Plan""
+    Then the user waits for text ""Added To Cart"" to be visible
+    Then the user validates if "" $229.00 "" text is visible
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""modal__content"" is not visible
+    Then the user validates if "" Appliance Delivery: "" text is visible
+    Then the user validates if ""Delivery Postal Code:"" text is visible
+    Then the user validates if ""Change"" text is visible
+    Then the user validates if ""Scheduled Delivery Date:"" text is visible
+    #Then the user validates if "" You will receive a call one day before to confirm your delivery date and time. "" text is visible
+    Then the user validates if "" Scheduled Delivery Cost: "" text is visible
+    Then the user validates if "" $59.98 "" text is visible
+    Then the user validates if "" Item "" text is visible
+    Then the user validates if "" How To Get It "" text is visible
+    Then the user validates if "" Price/Quantity "" text is visible
+    Then the user validates if ""Item Total"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""img"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""manufacturer"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-name"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""model"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-pricing"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""unit-price"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""pricing-total"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""qty-input"" is visible
+    Then the user validates if "" Remove "" text is visible
+    Then the user validates if "" Save for Later "" text is visible
+    Then the user validates if "" Service(s) "" text is visible
+    Then the user validates if "" Order Summary "" text is visible
+    Then the user validates if "" Order Subtotal "" text is visible
+    Then the user validates if "" Appliance Delivery "" text is visible
+    Then the user validates if "" Estimated Taxes* "" text is visible
+    Then the user validates if "" Estimated Total "" text is visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnCheckoutNowOrderSummary"" is visible
+    Then the user validates if ""*Final taxes and shipping/delivery will be calculated during checkout."" text is visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnPaypalCheckoutNow"" is not visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnReturnPolicy"" is visible
+    Then the user validates if ""Some exceptions apply. Refer to our "" text is visible
+    Then the user validates if ""4-Year Home Depot Protection Plan"" checkbox is selected
+    Then the user click on "" What's Covered? ""
+    Then the user validates if ""Home Depot Protection Plan"" text is visible
+    Then the user clicks on the webelement with html tag ""aria-label"" as ""Close""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-modal__container"" is not visible
+    Then the user deselect all service checkbox
+    Then the user waits for webelement ""btnCheckoutNowOrderSummary"" with html attribute ""id"" to be visible
+    Then the user validates if product totals are equal on the cart page
+    Then the user validates the order summary table
+    Then the user validates if ""Change"" text is visible
+    Then the user click on ""Change""
+    Then the user enters text ""<inValidPostalCode>"" in textbox with placeholder ""A1A 1A1""
+    Then the user validates if button ""Change"" is disabled
+    Then the user presses keyboard key ""Tab""
+    Then the user validates if ""Change"" text is visible
+    Then the user clicks on the link ""Change"" at index ""2""
+    Then the user waits for webelement ""acl-date-picker-calender--has-shadow"" with html attribute ""class"" to be visible
+    Then the user verifies if webelement with html tag ""class"" as ""acl-date-picker-calender__month-nav-button"" is disabled
+    Then the user verifies if webelement with html tag ""class"" as ""acl-date-picker-calender__month-next"" is enabled
+    Then the user validates if webelement with html attribute ""classname"" as ""acl-close-button"" is visible
+    Then the user presses keyboard key ""Tab""
+    Then the user presses keyboard key ""Enter""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-date-picker-calender ng-star-inserted"" is visible
+    Then the user validates ""month"" in datepicker
+    Then the user click on ""Done""
+    Then the user click on ""Checkout Now""
+    Then the user waits for text "" Checkout as Guest "" to be visible
+
+    Examples:
+      | postalCode | inValidPostalCode |
+      | M1R 4E6    | 32N 3GF           |"
+User should able to verify scheduled delivery section in cart page,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user click on ""Francais""
+    Then the user enters text sku in textbox with placeholder ""Que cherchez-vous?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user waits for webelement ""appliancePostalCodeBox"" with html attribute ""id"" to be visible
+    Then the user enters text ""<postalCode>"" in textbox with placeholder ""A1A 1A1""
+    Then the user click on ""Soumettre""
+    Then the user waits for webelement ""hdca-product__description-fulfillment-paragraph--wrapper"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user waits for webelement ""ng-trigger-modalTrans"" with html attribute ""class"" to be visible
+    Then the user validates if ""Plan de protection"" text is visible
+    Then the user validates if "" Qu’est-ce qui est couvert? "" text is visible
+    Then the user validates if webelement with html attribute ""classname"" as ""acl-m--none acl-position--relative"" is visible
+    Then the user validates if "" Plan de protection de 4 ans "" text is visible
+    Then the user click on ""Refuser""
+    Then the user click on ""Afficher le panier""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if "" Livraison d’électroménagers: "" text is visible
+    Then the user validates if ""Code postal de l’adresse de livraison:"" text is visible
+    Then the user validates if ""Changer"" text is visible
+    Then the user validates if ""Date de livraison prévue:"" text is visible
+    #Then the user validates if "" Vous recevrez un appel la veille de la livraison pour en confirmer la date et l’heure. "" text is visible
+    Then the user validates if "" Frais de livraison: "" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""delivery-cost-total"" is visible
+    Then the user validates if "" Article "" text is visible
+    Then the user validates if "" Comment l’obtenir "" text is visible
+    Then the user validates if "" Prix/Quantité "" text is visible
+    Then the user validates if ""Prix total de l'article"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""img"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""manufacturer"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-name"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""model"" is visible
+    Then the user validates if "" Expédition prévue "" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-pricing"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""unit-price"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""pricing-total"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""qty-input"" is visible
+    Then the user validates if "" Supprimer "" text is visible
+
+    Examples:
+      | postalCode |
+      | M1R 4E6    |"
+"Guest User should able to verify Cart page, ordersummary, storeoverlay, pagination in EN","Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user click on "" Store Pick-Up ""
+    Then the user validates if webelement with html attribute ""aria-label"" as ""Store Pick-Up Selected"" is visible
+    Then the user add product to cart
+    Then the user waits for webelement ""acl-modal__container"" with html attribute ""class"" to be visible
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""order-container"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__container-content"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""order-summary-container"" is visible
+    Then the user validates if "" Order Summary "" text is visible
+    Then the user validates if "" Order Subtotal "" text is visible
+    Then the user validates if "" Estimated Taxes* "" text is visible
+    Then the user validates if "" Estimated Total "" text is visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnCheckoutNowOrderSummary"" is visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnPaypalCheckoutNow"" is visible
+    Then the user validates if ""*Final taxes and shipping/delivery will be calculated during checkout."" text is visible
+    Then the user validates if ""Return Policy"" text is visible
+    Then the user validates if ""Some exceptions apply. Refer to our "" text is visible
+    Then the user validates if "" Pick Up In-Store: "" text is visible
+    Then the user validates if ""  Pick up In-Store: "" radio button is selected
+    Then the user validates if ""Change"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-address"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store"" is visible
+    Then the user validates if "" Item "" text is visible
+    Then the user validates if "" How To Get It "" text is visible
+    Then the user validates if "" Price/Quantity "" text is visible
+    Then the user validates if ""Item Total"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""img"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""manufacturer"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-name"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""model"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-pricing"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""unit-price"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""pricing-total"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""qty-input"" is visible
+    Then the user validates if "" Remove "" text is visible
+    Then the user hover on the ""button"" with name as ""Change""
+    Then the user click on ""Change""
+    Then the user validates if ""Change Pick-Up Store"" text is visible
+    Then the user validates if ""Current Store"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-store__pickup-title ng-star-inserted"" is visible
+    Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user validates if ""SCARBOROUGH #7001"" text is visible
+    Then the user validates if ""428 Ellesmere Road, Scarborough, ON, M1R 4E6"" text is visible
+    Then the user validates if ""416-609-1800"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-store__pickup-title ng-star-inserted"" is visible
+    Then the user validates if "" Next  "" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-store-list__items"" is visible
+    Then the user click on "" Next  ""
+    Then the user validates if ""Previous Page"" text is visible
+    Then the user click on ""Previous Page""
+    Then the user validates if ""Pick Up Here"" text is visible
+    Then the user click on ""Pick Up Here""
+    Then the user validates if "" will change the pick up location for all "" text is visible
+    Then the user clicks on the webelement with html tag ""ctastyle"" as ""secondary""
+    Then the user clicks on the webelement with html tag ""classname"" as ""acl-modal__close-svg""
+    Then the user validates if ""Change Pick-Up Store"" text is not visible
+    Then the user click on ""Change""
+    Then the user validates if ""Change Pick-Up Store"" text is visible
+    Then the user clicks on the ""Pick Up Here"" button at index ""3""
+    Then the user clicks on the ""OK"" button at index ""3""
+    Then the user validates if the webelement with html attribute ""class"" as ""store-store"" has text ""CURITY #7012""
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-store-hours-menu__info-title"" has text ""Curity""
+    Then the user validates if ""Change Pick-Up Store"" text is not visible
+    Then the user enters value ""<increasedNoOfProduct>"" in dropdown ""<productQuantity>""
+    Then the user validates if the webelement with html attribute ""class"" as ""sub-title"" has text ""<increasedNoOfProduct>""
+    Then the user enters value ""<decreasedNoOfProduct>"" in dropdown ""<productQuantity>""
+    Then the user validates if the webelement with html attribute ""class"" as ""sub-title"" has text ""<decreasedNoOfProduct>""
+    Then the user click on ""Return Policy""
+    Then the user validates the url to have ""/en/home/customer-support/return-policy.html""
+    Then the user presses keyboard key ""Escape""
+    Then the user click on "" Cart ""
+    Then the user validates the order summary table
+    Then the user validates if product totals are equal on the cart page
+    Then the user clicks on the webelement with html tag ""id"" as ""btnPaypalCheckoutNow""
+    Then the user waits for webelement ""header"" with html attribute ""id"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""paypal-logo paypal-logo-long"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""login  "" is visible
+    Then the user validates if webelement with html attribute ""id"" as ""login_emaildiv"" is visible
+    Then the user click on ""Cancel and return to Home Depot's Test Store""
+    Then the user validates if ""Checkout"" text is visible
+
+    Examples: 
+      | increasedNoOfProduct | decreasedNoOfProduct | productQuantity |
+      |                    2 |                    1 | Quantity        |"
+"User should able to verify order summary,change in quantity and pickup in store is not changed when store is change in FR","Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user click on ""Francais""
+    Then the user enters text sku in textbox with placeholder ""Que cherchez-vous?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""Afficher le panier""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user click on "" Ramassez en magasin : ""
+    Then the user waits for webelement ""help-button-icon"" with html attribute ""class"" to be visible
+    Then the user validates if "" Ramassez en magasin : "" text is visible
+    Then the user validates if ""Modifier"" text is visible
+    Then the user hover on the ""button"" with name as ""Modifier""
+    Then the user validates if ""Ce changement s’appliquera à tous les articles destinés à être ramassés en magasin aujourd’hui."" text is visible
+    Then the user click on ""Modifier""
+    Then the user validates if ""Changer le magasin sélectionné pour le ramassage"" text is visible
+    Then the user validates if ""Magasin actuel"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-store__pickup-title ng-star-inserted"" is visible
+    Then the user validates if ""Ramasser ici"" text is visible
+    Then the user click on ""Ramasser ici""
+    Then the user validates if "" changera le magasin sélectionné pour les articles à ramasser aujourd’hui dans votre panier."" text is visible
+    Then the user clicks on the webelement with html tag ""ctastyle"" as ""secondary""
+    Then the user clicks on the webelement with html tag ""classname"" as ""acl-modal__close-svg""
+    Then the user validates if ""Changer le magasin sélectionné pour le ramassage"" text is not visible
+    Then the user click on ""Modifier""
+    Then the user validates if ""Changer le magasin sélectionné pour le ramassage"" text is visible
+    Then the user clicks on the ""Ramasser ici"" button at index ""3""
+    Then the user clicks on the ""D'accord"" button at index ""3""
+    Then the user validates if the webelement with html attribute ""class"" as ""store-store"" has text ""CURITY #7012""
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-store-hours-menu__info-title"" has text ""Curity""
+    Then the user validates if webelement with html attribute ""class"" as ""store-icon"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-title"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-store"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-address"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""cart__container"" is visible
+    Then the user validates if "" Article "" text is visible
+    Then the user validates if "" Comment l’obtenir "" text is visible
+    Then the user validates if "" Prix/Quantité "" text is visible
+    Then the user validates if ""Prix total de l'article"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""img"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""manufacturer"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-name"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""model"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-pricing"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""unit-price"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""pricing-total"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""qty-input"" is visible
+    Then the user validates if "" Supprimer "" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__container-content"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""order-summary-container"" is visible
+    Then the user validates if "" Sommaire de la commande "" text is visible
+    Then the user validates if "" Total partiel "" text is visible
+    Then the user validates if "" Ramassez en magasin "" text is visible
+    Then the user validates if "" Taxes estimées* "" text is visible
+    Then the user validates if "" Montant estimé "" text is visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnCheckoutNowOrderSummary"" is visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnPaypalCheckoutNow"" is visible
+    Then the user validates if ""*Le montant total incluant les taxes et les frais d’expédition/de livraison sera calculé au moment de payer."" text is visible
+    Then the user validates if ""Politique de retour"" text is visible
+    Then the user validates if ""Certaines exceptions s’appliquent. Pour obtenir plus de renseignements, veuillez vous référer à notre "" text is visible
+    Then the user enters value ""<noOfProduct>"" in dropdown ""<productQuantity>""
+    Then the user validates if the webelement with html attribute ""class"" as ""sub-title"" has text ""<noOfProduct>""
+    Then the user click on ""Politique de retour""
+    Then the user validates the url to have ""fr/accueil/service-a-la-clientele/politique-de-retour-des-marchandises.html""
+    Then the user presses keyboard key ""Escape""
+    Then the user click on "" Panier ""
+    Then the user validates the order summary table in french
+    Then the user validates if product totals are equal on the cart page in french
+    Then the user clicks on the webelement with html tag ""id"" as ""btnPaypalCheckoutNow""
+    Then the user waits for webelement  ""Log in to your PayPal account"" with html attribute ""data-title"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""paypal-logo paypal-logo-long"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""login  "" is visible
+    Then the user validates if webelement with html attribute ""id"" as ""login_emaildiv"" is visible
+    Then the user clicks on the webelement with html tag ""id"" as ""cancelLink""
+    Then the user validates if ""Caisse"" text is visible
+    Then the user click on ""Modifier""
+    Then the user clicks on the webelement with html tag ""symbol"" as ""cart""
+    Then the user clicks on the webelement with html tag ""aria-label"" as ""Page d'accueil de Home Depot""
+    Then the user presses keyboard key ""Escape""
+    Then the user click on ""Mon magasin:""
+    Then the user click on ""Modifier le magasin""
+    Then the user enters text ""7007"" in textbox with placeholder ""Code postal, ville, ou numéro du magasin""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Sélectionner""
+    Then the user click on "" Panier ""
+    Then the user validates if webelement with html attribute ""class"" as ""order-container"" is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""store-store"" has text ""CURITY #7012""
+  
+    Examples: 
+      | noOfProduct | productQuantity |
+      |           2 | Quantité        |"
+User should able to verify pickup in store is not changed when store is change and addtional BOPIS product is added in EN,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""order-container"" is visible
+    Then the user selects the radio button "" Pick up In-Store: ""
+    Then the user validates if the webelement with html attribute ""class"" as ""info-title"" has text ""Scarborough""
+    Then the user validates if the webelement with html attribute ""class"" as ""store-store"" has text ""SCARBOROUGH #7001""
+    Then the user enters text ""<sku1>"" in the textbox ""My Store""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__order-container"" is visible
+    Then the user selects the radio button ""  Pick up In-Store: ""
+    Then the user validates if webelement with html attribute ""class"" as ""order-container"" is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""info-title"" has text ""Scarborough""
+    Then the user validates if the webelement with html attribute ""class"" as ""store-store"" has text ""SCARBOROUGH #7001""
+    Then the user clicks on the webelement with html tag ""aria-label"" as ""The Home Depot homepage""
+    Then the user presses keyboard key ""Escape""
+    Then the user click on ""My Store:""
+    Then the user click on ""Change Store""
+    Then the user enters text ""7007"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user click on "" Cart ""
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__order-container"" is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""store-store"" has text ""SCARBOROUGH #7001""
+
+    Examples:
+      | sku1       |
+      | 1000475744 |"
+"User should able to verify BOSS no shipping fee in ATC overlay, ordersummary on cart page and change in quantity in EN","Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-weight--bold acl-uppercase"" do not have text ""SHIP TO STORE""
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user click on ""  Ship to Store: ""
+    Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user validates if ""Change"" text is visible
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for text ""Pick Up Here"" to be visible
+    Then the user click on ""Pick Up Here""
+    Then the user click on ""OK""
+    Then the user validates if "" Ship to Store: "" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__container-content"" is visible
+    Then the user validates if "" Order Summary "" text is visible
+    Then the user validates if "" Order Subtotal "" text is visible
+    Then the user validates if "" Ship To Store "" text is visible
+    Then the user validates if "" Estimated Taxes* "" text is visible
+    Then the user validates if "" Estimated Total "" text is visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnCheckoutNowOrderSummary"" is visible
+    Then the user validates if webelement with html attribute ""id"" as ""btnPaypalCheckoutNow"" is visible
+    Then the user validates if ""*Final taxes and shipping/delivery will be calculated during checkout."" text is visible
+    Then the user validates if ""Return Policy"" text is visible
+    Then the user validates if ""Some exceptions apply. Refer to our "" text is visible
+    Then the user validates the order summary table
+    Then the user validates if product totals are equal on the cart page
+    Then the user presses keyboard key ""Escape""
+    Then the user validates if webelement with html attribute ""class"" as ""help-button-icon"" is visible
+    Then the user hover on the ""button"" with name as ""Change""
+    Then the user validates if ""Changing the store will affect all Pick Up Later items."" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__order-container"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__container-content"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""change-link"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-icon"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-title"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-store"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-address"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""cart__container"" is visible
+    Then the user validates if "" Item "" text is visible
+    Then the user validates if "" How To Get It "" text is visible
+    Then the user validates if "" Price/Quantity "" text is visible
+    Then the user validates if ""Item Total"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""img"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""manufacturer"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-name"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""model"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-pricing"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""unit-price"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""pricing-total"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""qty-input"" is visible
+    Then the user validates if "" Remove "" text is visible
+    Then the user enters value ""<noOfProduct>"" in dropdown ""<productQuantity>""
+    Then the user validates if the webelement with html attribute ""class"" as ""sub-title"" has text ""<noOfProduct>""
+    Then the user clicks on the webelement with html tag ""class"" as ""hdca-cart__product-image-img""
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-container"" is visible
+
+    Examples: 
+      | noOfProduct | productQuantity |
+      |           2 | Quantity        |"
+User should able to verify change in quantity on Cart page and store name not change in french,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user click on ""Francais""
+    Then the user enters text sku in textbox with placeholder ""Que cherchez-vous?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user click on "" Expédition au magasin ""
+    Then the user validates if webelement with html attribute ""aria-label"" as ""Expédition au magasin sélectionnée"" is visible
+    Then the user add product to cart
+    Then the user click on ""Afficher le panier""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if "" Expédition au magasin : "" text is visible
+    Then the user validates if "" Expédition au magasin : "" radio button is selected
+    Then the user validates if webelement with html attribute ""class"" as ""help-button-icon"" is visible
+    Then the user hover on the ""button"" with name as ""Modifier""
+    Then the user validates if ""Le changement de magasin s’appliquera à tous les articles à ramasser plus tard."" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__order-container"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__container-content"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""change-link"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-icon"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-title"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-store"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""store-address"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""cart__container"" is visible
+    Then the user validates if "" Article "" text is visible
+    Then the user validates if "" Comment l’obtenir "" text is visible
+    Then the user validates if "" Prix/Quantité "" text is visible
+    Then the user validates if ""Prix total de l'article"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""img"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""manufacturer"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-name"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""model"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""product-pricing"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""unit-price"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""pricing-total"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""qty-input"" is visible
+    Then the user validates if "" Supprimer "" text is visible
+    Then the user enters value ""<noOfProduct>"" in dropdown ""<productQuantity>""
+    Then the user validates if the webelement with html attribute ""class"" as ""sub-title"" has text ""<noOfProduct>""
+    Then the user clicks on the webelement with html tag ""class"" as ""hdca-cart__product-image-img""
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-container"" is visible
+    Then the user clicks on the webelement with html tag ""aria-label"" as ""Page d'accueil de Home Depot""
+    Then the user presses keyboard key ""Escape""
+    Then the user click on ""Mon magasin:""
+    Then the user click on ""Modifier le magasin""
+    Then the user enters text ""7007"" in textbox with placeholder ""Code postal, ville, ou numéro du magasin""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Sélectionner""
+    Then the user click on "" Panier ""
+    Then the user validates if the webelement with html attribute ""class"" as ""info-title"" has text ""Ancaster""
+    Then the user validates if webelement with html attribute ""class"" as ""order-container"" is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""store-store"" has text ""SCARBOROUGH #7001""
+
+    Examples: 
+      | noOfProduct | productQuantity |
+      |           2 | Quantité        |"
+User should able to verify BOPIS pro available CTLP selected in PIP and verify cart in FR,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user click on ""Francais""
+    Then the user enters text sku in textbox with placeholder ""Que cherchez-vous?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user validates if "" Vous voulez faire installer votre achat? "" text is visible
+    Then the user validates if "" Me mettre en lien avec des Pros locaux "" text is visible
+    Then the user validates if ""Qu’est-ce qu’un Pro local?"" text is visible
+    Then the user selects the radio button "" Me mettre en lien avec des Pros locaux ""
+    Then the user validates if webelement with html attribute ""id"" as ""ctlpPostalCode"" is visible
+    Then the user enters text ""<postalCode>"" in the textbox "" Inscrivez le code postal de votre chantier pour connaître la disponibilité de Pros locaux : ""
+    Then the user clicks on the webelement with html tag ""type"" as ""submit""
+    Then the user validates if webelement with html attribute ""class"" as ""small acl-color--strong"" is visible
+    Then the user add product to cart
+    Then the user click on ""Afficher le panier""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__product-services"" is visible
+    Then the user validates if ""Vous voulez faire installer votre achat?"" text is visible
+    Then the user validates if ""Me mettre en lien avec des Pros locaux"" text is visible
+    Then the user validates if ""Qu’est-ce qu’un Pro local?"" text is visible
+    Then the user validates if ""Me mettre en lien avec des Pros locaux"" checkbox is selected
+
+    Examples:
+      | postalCode |
+      | M1R 4E6    |"
+User should able to verify Bopis pro Available and removal to remove CTLP,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-container"" is visible
+    Then the user validates if "" Want it Installed? "" text is visible
+    Then the user validates if "" Connect me to Local Pros "" text is visible
+    Then the user validates if ""What are Local Pros?"" text is visible
+    Then the user selects the radio button "" Connect me to Local Pros ""
+    Then the user validates if webelement with html attribute ""id"" as ""ctlpPostalCode"" is visible
+    Then the user enters text ""<postalCode>"" in the textbox "" Enter the postal code of your job site to check availability of Local Pros: ""
+    Then the user clicks on the webelement with html tag ""type"" as ""submit""
+    Then the user validates if ""Connect me to Local Pros"" checkbox is selected
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__product-services"" is visible
+    Then the user validates if ""Want it Installed?"" text is visible
+    Then the user validates if ""Connect me to Local Pros"" text is visible
+    Then the user validates if ""What are Local Pros?"" text is visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is selected
+    Then the user click on "" Remove ""
+    Then the user validates if ""Want it Installed?"" text is not visible
+    Then the user validates if ""Connect me to Local Pros"" text is not visible
+    Then the user validates if ""What are Local Pros?"" text is not visible
+
+    Examples:
+      | postalCode |
+      | M1R 4E6    |"
+User should able to verify Bopis Select unSelect CTLP and verify visual cues,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-container"" is visible
+    Then the user validates if "" Want it Installed? "" text is visible
+    Then the user validates if "" Connect me to Local Pros "" text is visible
+    Then the user validates if ""What are Local Pros?"" text is visible
+    Then the user selects the radio button "" Connect me to Local Pros ""
+    Then the user validates if webelement with html attribute ""id"" as ""ctlpPostalCode"" is visible
+    Then the user enters text ""<postalCode>"" in the textbox "" Enter the postal code of your job site to check availability of Local Pros: ""
+    Then the user clicks on the webelement with html tag ""type"" as ""submit""
+    Then the user validates if webelement with html attribute ""class"" as ""small acl-color--strong"" is visible
+    Then the user add product to cart
+    Then the user validates if ""Installation Request"" text is not visible
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-cart__product-services"" is visible
+    Then the user validates if ""Want it Installed?"" text is visible
+    Then the user validates if ""Connect me to Local Pros"" text is visible
+    Then the user validates if ""What are Local Pros?"" text is visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is selected
+    Then the user clicks on the checkbox ""Connect me to Local Pros""
+    Then the user validates if ""Connect me to Local Pros"" checkbox is not selected
+
+    Examples:
+      | postalCode |
+      | M1R 4E6    |"
+User should able to verify shipToYou pro Not Available select CTLP Option verify NoMessage in ATC,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-container"" is visible
+    Then the user validates if "" Want it Installed? "" text is visible
+    Then the user validates if "" Connect me to Local Pros "" text is visible
+    Then the user validates if ""What are Local Pros?"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""faux-checkbox"" is visible
+    Then the user selects the radio button "" Connect me to Local Pros ""
+    Then the user validates if webelement with html attribute ""id"" as ""ctlpPostalCode"" is visible
+    Then the user enters text ""<postalCode>"" in the textbox "" Enter the postal code of your job site to check availability of Local Pros: ""
+    Then the user clicks on the webelement with html tag ""type"" as ""submit""
+    Then the user validates if "" There are no Local Pros available near "" text is visible
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if ""Installation Request"" text is not visible
+
+    Examples:
+      | postalCode |
+      | M4G 4H9    |"
+Guest User should able to verify CBO details are displayed on order confirmation page,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+      Then the user clicks on the webelement with html tag ""title"" as ""Search""
+      Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+      Then the user click on ""Select""
+      Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+      Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+      Then the user waits for webelement ""ma-placeholder"" with html attribute ""class"" to be visible
+      Then the user click on ""Customize and Buy""
+      Then the user waits for webelement ""ma-placeholder"" with html attribute ""class"" to be visible
+      Then the user presses keyboard key ""Escape""
+      Then the user enters text ""WindowName"" in the textbox ""Name Your Window""
+      Then the user click on ""Inside Mount""
+      Then the user click on ""White 5035""
+      Then the user click on ""Privacy Slats""
+      Then the user click on '3"" Standard Valance'
+      Then the user click on ""Wand Tilt""
+      Then the user click on ""Add To Cart""
+      Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+      Then the user click on ""Checkout Now""
+      Then the user click on ""Checkout as Guest""
+      Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+      Then the user enters random email in the textbox ""Email (for receipt)""
+      Then the user click on ""Continue""
+      Then the user waits for text ""Standard Shipping"" to be visible
+      Then the user enters text ""<firstName>"" in the textbox ""First Name""
+      Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+      Then the user enters text ""<address>"" in textbox with placeholder ""Enter your address...""
+      Then the user enters text ""<city>"" in the textbox ""City""
+      Then the user enters value ""<province>"" in dropdown ""Province""
+      Then the user enters text ""<postalCode>"" in the textbox ""Postal Code""
+      Then the user enters text ""<phone>"" in the textbox ""Phone""
+      Then the user enters text ""<Ext_Opt>"" in the textbox ""Ext. (Optional)""
+      Then the user click on ""Continue""
+      Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+      Then the user waits for webelement ""acl-tabs__item"" with html attribute ""class"" to be visible
+      Then the user clicks on the webelement with html tag ""class"" as ""acl-icon acl-tabs__item-icon-title""
+      Then the user clicks on the webelement with html tag ""classname"" as ""acl-ml--x-small acl-mb--x-small""
+      Then the user waits for webelement ""Log in to your PayPal account"" with html attribute ""data-title"" to be visible
+      Then the user enters text ""<paypalUserName>"" in textbox with placeholder ""Email or mobile number""
+      Then the user clicks on the webelement with html tag ""id"" as ""btnNext""
+      Then the user waits for webelement ""password"" with html attribute ""id"" to be visible
+      Then the user enters text ""<paypalPassword>"" in textbox with placeholder ""Password""
+      Then the user clicks on the webelement with html tag ""id"" as ""btnLogin""
+      Then the user waits for webelement ""paywith-title"" with html attribute ""data-testid"" to be visible
+      Then the user clicks on the webelement with html tag ""id"" as ""payment-submit-btn""
+      Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+      Then the user click on ""Place Order""
+      Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+      Then the user validates if "" Your order was successful. "" text is visible
+      Then the user validates if webelement with html attribute ""class"" as ""acl-image__image-container"" is visible
+      Then the user validates if ""Customization"" text is visible
+      Then the user validates if webelement with html attribute ""class"" as ""acl-flex acl-flex--column acl-border--left"" is visible
+      Then the user validates if "" Made-to-Order "" text is visible
+        
+        Examples:
+          | paypalUserName  | paypalPassword | firstName | lastName | address      | city      | province | postalCode | phone      | Ext_Opt |
+          | cabuyer2@thd.ca | 11111111       | Rosa      | Almidar  | 621 Rue Habe | Lavaltrie | Quebec   | J5T 2A1    | 4165985212 | 8921    |"
+User should able to verify Appliance Cti With Pills Cti Components on checkout,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user enters text ""<postalCode>"" in textbox with placeholder ""A1A 1A1""
+    Then the user click on ""Submit""
+    Then the user validates if "" Add Installation Including Parts "" text is visible
+    Then the user validates if ""<postalCode>"" text is visible
+    Then the user validates if ""included?"" text is visible
+    Then the user validates if "" Add Installation Including Parts "" checkbox is not selected
+    Then the user clicks on the checkbox "" Add Installation Including Parts ""
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html tag ""formcontrolname"" as ""ctiCheckBox"" at index ""1"" is selected
+    Then the user validates if webelement with html attribute ""class"" as ""acl-color--title-dark"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-alert__message"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-ml--x-small acl-link"" is visible
+    Then the user validates if ""HAULAWAY & DISPOSE GAS COOKTOP"" text is visible
+    Then the user clicks on the element with html tag ""class"" as ""hdca-checkbox__faux-checkbox"" at index ""2""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-pr--xx-small ng-star-inserted"" is visible
+    Then the user validates if ""Trip Fee*"" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-form-fieldset--is-inline"" is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-form-field ng-star-inserted"" at index ""1"" is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-form-field ng-star-inserted"" at index ""2"" is visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-checkout-header__title"" is visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" at index ""1"" has text ""APPLIANCE DELIVERY:""
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in the textbox ""Address""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<phoneNum>"" in the textbox ""Phone""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Visa"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Visa"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+    Then the user validates if "" APPLIANCE DELIVERY: "" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-row acl-pt--x-large"" is visible
+    Then the user validates if "" Trip Fee "" text is visible
+
+    Examples:
+      | postalCode | firstName | lastName | address            | city        | province | phoneNum   |
+      | M1R 4E6    | Louis     | Chen     | 428 Ellesmere Road | Scarborough | Ontario  | 2365678914 |"
+Guest User should able to verify CTI service note with CTI details in shipping section and remove CIT option in card,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user clicks on the checkbox "" Add Assembly at ""
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user selects the radio button ""Standard Shipping:""
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user waits for text ""Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user waits for text ""Standard Shipping"" to be visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-alert__message"" has text ""Note: This shipping address will be used as the service address for your product installation or assembly.""
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in textbox with placeholder ""Enter your address...""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user click on ""Continue""
+    Then the user validates if "" Service(s) "" text is visible
+    Then the user validates if text for ""Price"" contains ""<price>""
+    Then the user validates if ""Price: <subTotal>"" text is visible
+    Then the user clicks on the link ""Edit"" at index ""1""
+    Then the user waits for text "" My Cart "" to be visible
+    Then the user clicks on the checkbox ""Add Assembly at""
+    Then the user validates if ""Add Assembly at"" checkbox is not selected
+    Then the user click on ""Checkout Now""
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-alert__message"" do not have text ""Note: This shipping address will be used as the service address for your product installation or assembly.""
+    Then the user validates if ""Price: <subTotal>"" text is not visible
+    Then the user waits for text ""Payment Information"" to be visible
+    Then the user scrolls to ""Credit Card Information""
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Visa"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Visa"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+
+    Examples:
+      | postalCode | firstName | lastName | address            | city        | province | phone      | price            | subTotal |
+      | M1R 4E6    | Louis     | Cameron  | 428 Ellesmere Road | Scarborough | Ontario  | 2365678914 | $1,898.00 / each | $400.00  |"
+User should able to verify order confirmation with ctlp selected in cart,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user validates if "" Want it Installed? "" text is visible
+    Then the user add product to cart
+    Then the user waits for text ""Added To Cart"" to be visible
+    Then the user validates if "" Installation Request "" text is not visible
+    Then the user click on ""View Cart""
+    Then the user validates if ""Want it Installed?"" text is visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is not selected
+    Then the user click on ""  Pick up In-Store: ""
+    Then the user click on ""Connect me to Local Pros""
+    Then the user validates if "" Local Pros are available near "" text is visible
+    Then the user validates if ""Added"" text is visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user validates if ""Installation Request"" text is visible
+    Then the user validates if ""Pick-Up In Store:"" text is visible
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small"" is visible
+    Then the user clicks on the element with html tag ""class"" as ""item"" at index ""4""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Visa"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Visa"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+    Then the user validates if "" You will receive an email with Local Pro details. "" text is visible"
+User should able to verify CTLP message in checkout page,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user validates if "" Want it Installed? "" text is visible
+    Then the user add product to cart
+    Then the user waits for text ""Added To Cart"" to be visible
+    Then the user validates if "" Installation Request "" text is not visible
+    Then the user click on ""View Cart""
+    Then the user validates if ""Want it Installed?"" text is visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is not selected
+    Then the user validates if "" Ship to Store: "" text is visible
+    Then the user click on ""Connect me to Local Pros""
+    Then the user validates if "" Local Pros are available near "" text is visible
+    Then the user validates if ""Added"" text is visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user validates if ""Installation Request"" text is visible
+    Then the user validates if ""Ship To Store:"" text is visible
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small"" is visible
+    Then the user clicks on the element with html tag ""class"" as ""item"" at index ""4""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Visa"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Visa"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+    Then the user validates if "" You will receive an email with Local Pro details. "" text is visible
+    Then the user click on ""Learn more about Local Pros.""
+    Then the user waits for text ""Why Choose Local Pros?"" to be visible
+    Then the user validates the url to have ""/local-pro.html"""
+Guest User should able to place order on STH sku using master card without selecting CTLP option,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for text "" Delivery "" to be visible
+    Then the user validates if "" Want it Installed? "" text is visible
+    Then the user validates if "" Connect me to Local Pros "" text is visible
+    Then the user validates if ""What are Local Pros?"" text is visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is not selected
+    Then the user add product to cart
+    Then the user waits for webelement ""acl-modal__container acl-display--block"" with html attribute ""class"" to be visible
+    Then the user validates if "" Installation Request "" text is not visible
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user selects the radio button ""Standard Shipping:""
+    Then the user validates if the 'Standard Shipping:' radio button at index ""1"" is selected
+    Then the user validates if ""Connect me to Local Pros"" checkbox is not selected
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" at index ""1"" has text ""STANDARD SHIPPING:""
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small md:acl-p--medium"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in the textbox ""Address""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<postalCode>"" in the textbox ""Postal Code""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user enters text ""<extOpt>"" in the textbox ""Ext. (Optional)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Mastercard"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Mastercard"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+    Then the user validates if "" You will receive an email with Local Pro details. "" text is not visible
+
+    Examples:
+      | firstName | lastName | address           | city        | province | postalCode | phone      | extOpt |
+      | Test      | User     | 480 ELLESMERE RD  | Scarborough | Ontario  | M1R4E6     | 4704243288 | 8921   |"
+Registered user should able to see ctlp message when signin from checkout page,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user click on "" Account / Sign In ""
+    Then the user waits for webelement ""acl-mt--x-large acl-mx--medium"" with html attribute ""class"" to be visible
+    Then the user waits for text ""Email Address"" to be visible
+    Then the user enters text ""<email>"" in the textbox ""Email Address""
+    Then the user enters text ""<password>"" in the textbox ""Password""
+    Then the user waits for webelement ""submit"" with html attribute ""type"" to be visible
+    Then the user clicks on the webelement with html tag ""type"" as ""submit""
+    Then the user validates if "" Hi John, My Account "" text is visible
+    Then the user checks if cart is empty
+    Then the user click on "" Hi John, My Account ""
+    Then the user click on ""Log Out""
+    Then the user validates if webelement with html attribute ""data-title"" as ""Hi"" is not visible
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user validates if "" Want it Installed? "" text is visible
+    Then the user validates if "" Connect me to Local Pros "" text is visible
+    Then the user validates if ""What are Local Pros?"" text is visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is not selected
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is not selected
+    Then the user selects the radio button "" Express Delivery: FLAT FEE ""
+    Then the user clicks on the express delivery same day with postal code ""<postalCode>""
+    Then the user validates if "" Express Delivery: "" text is visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is not selected
+    Then the user clicks on the checkbox ""Connect me to Local Pros""
+    Then the user waits for text "" Express Delivery: "" to be visible
+    Then the user validates if ""Connect me to Local Pros"" checkbox is selected
+    Then the user validates if "" Local Pros are available near "" text is visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user enters text ""<email>"" in the textbox ""Email Address""
+    Then the user enters text ""<password>"" in the textbox ""Password""
+    Then the user click on ""Sign In & Checkout""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user validates if ""Checkout"" text is visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-card__header-title"" at index ""2"" has text ""Express Delivery""
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" has text ""EXPRESS DELIVERY:""
+    Then the user validates if ""Installation Request"" text is visible
+    Then the user validates if ""Added"" text is visible
+    Then the user validates if "" Up to 3 Local Pros near  "" text is visible
+    Then the user validates if ""<postalCode>"" text is visible
+    Then the user validates if ""  will call you within 72 hours to provide a quote and discuss scheduling. You'll also receive a confirmation email with their information and next steps. "" text is visible
+
+    Examples:
+      | email                    | password | postalCode |
+      | Adriel_Mills43@gmail.com | Test@123 | M1R 4E6    |"
+User should able to verify home services checkout page and ocp page,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product__gallery"" with html attribute ""class"" to be visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-row acl-py--xx-small"" is visible
+    Then the user click on ""Check Price & Availability""
+    Then the user validates if webelement with html attribute ""class"" as ""banner__wrapper--postal-container"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""banner__wrapper--text-section"" is visible
+    Then the user presses keyboard key ""Escape""
+    Then the user validates if webelement with html attribute ""class"" as ""banner__wrapper--pincode"" is visible
+    Then the user clicks on the element with html tag ""class"" as ""hdca-cms-home-services-banner__wrapper--pincode"" at index ""1""
+    Then the user validates if webelement with html attribute ""id"" as ""hdca-cms-postalcode"" is visible
+    Then the user enters text ""<ctmPostalCode>"" in the textbox ""Postal Code:""
+    Then the user click on ""Submit""
+    Then the user validates if webelement with html attribute ""title"" as ""Add To Cart"" is visible
+    Then the user click on ""Add To Cart""
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-button2__label"" is visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user validates if webelement with html attribute ""class"" as ""hdca-checkout-header__title"" is visible
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small md:acl-p--medium"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in textbox with placeholder ""Enter your address...""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user enters text ""<extension>"" in the textbox ""Ext. (Optional)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" is visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-sub-title"" at index ""2"" has text ""1 item(s)""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-line-limit--2"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-wspace--nowrap"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-justify-content--between acl-mt--medium"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Visa"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Visa"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+
+    Examples:
+      | ctmPostalCode | firstName | lastName    | address            | city        | province | postalCode | phone      |
+      | M1R 4E3       | Testuser  | WebdriverIO | 428 Ellesmere Road | Scarborough | Ontario  | M1R 4E6    | 4704243224 |"
+Guest user should able to buy bopis product with giftcard,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if "" Pick Up In-Store: "" text is visible
+    Then the user click on ""  Pick up In-Store: ""
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" at index ""1"" has text ""PICK-UP IN STORE:""
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small acl-bg-color--shade"" is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-flex acl-title"" is visible
+    Then the user clicks on the element with html tag ""class"" as ""item"" at index ""4""
+    Then the user click on ""Continue""
+    Then the user validates if "" Order will be picked up by: "" text is visible
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user validates if ""Apply a Gift Card"" text is visible
+    Then the user click on ""Apply a Gift Card""
+    Then the user waits for webelement ""giftCardContainer"" with html attribute ""id"" to be visible
+    Then the user switches to the frame ""__zoid__gift_card_micro_ui""
+    Then the user enters text ""<cardNumber>"" in the textbox ""Card Number""
+    Then the user enters text ""<pin>"" in the textbox ""PIN""
+    Then the user switches to the parent frame
+    Then the user click on ""Check Balance""
+    Then the user waits for text ""Available Balance: "" to be visible
+    Then the user validates if ""Check New Balance"" text is visible
+    Then the user click on ""Apply""
+    Then the user waits for webelement ""acl-pb--medium hdca-gift-card-item"" with html attribute ""class"" to be visible
+    Then the user validates if "" Gift card ending in 1182 "" text is visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-display--flex acl-flex--row"" at index ""2"" has text ""remaining""
+    Then the user validates if ""$3.03"" text is visible
+    Then the user validates if ""Remove"" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-mt--xx-large acl-mb--large"" has text ""$0.00""
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""ctHidden acl-p--x-small"" with html attribute ""class"" to be visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in textbox with placeholder ""Enter your address...""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<postalCode>"" in the textbox ""Postal Code""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+
+    Examples:
+      | cardNumber              | pin  | firstName | lastName   | address            | city        | province | postalCode | phone      | extension |
+      | 98062361001791279001182 | 9127 | Testuser  | Automation | 428 Ellesmere Road | Scarborough | Ontario  | M1R 4E6    | 4704243224 | 8921      |"
+User should able to Place Order Parts And Service For With Paypal Verify Delivery Information In Confirmation Page,"Then the user enters text ""9001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""appliancePostalCodeBox"" with html attribute ""id"" to be visible
+    Then the user enters text ""<postalCode>"" in textbox with placeholder ""A1A 1A1""
+    Then the user click on ""Submit""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""Decline""
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in the textbox ""Address""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<phoneNum>"" in the textbox ""Phone""
+    Then the user enters text ""<extension>"" in the textbox ""Ext. (Optional)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user waits for webelement ""acl-tabs__item"" with html attribute ""class"" to be visible
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-icon acl-tabs__item-icon-title""
+    Then the user clicks on the webelement with html tag ""classname"" as ""acl-ml--x-small acl-mb--x-small""
+    Then the user waits for webelement ""Log in to your PayPal account"" with html attribute ""data-title"" to be visible
+    Then the user enters text ""<paypalUserName>"" in textbox with placeholder ""Email or mobile number""
+    Then the user clicks on the webelement with html tag ""id"" as ""btnNext""
+    Then the user enters text ""<paypalPassword>"" in textbox with placeholder ""Password""
+    Then the user clicks on the webelement with html tag ""id"" as ""btnLogin""
+    Then the user click on ""Complete Purchase""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+    Then the user validates if "" APPLIANCE DELIVERY: "" text is visible
+    Then the user validates if "" Scheduled Delivery Date: "" text is visible
+
+    Examples:
+      | postalCode | firstName | lastName | address            | city        | province | phoneNum   | extension | paypalUserName  | paypalPassword |
+      | M1R 4E6    | Luther    | King     | 428 Ellesmere Road | Scarborough | Ontario  | 4704243224 | 4567888   | cabuyer2@thd.ca | 11111111       |"
+User should able to place order with hd commercial card,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user waits for webelement ""appliancePostalCodeBox"" with html attribute ""id"" to be visible
+    Then the user enters text ""<postalCode>"" in textbox with placeholder ""A1A 1A1""
+    Then the user click on ""Submit""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""Decline""
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user validates if "" Appliance Delivery: "" text is visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user validates if ""Checkout"" text is visible
+    Then the user verifies if the webelement with html attribute ""class"" as ""acl-accordion-panel__header-title"" at index ""1"" has text ""APPLIANCE DELIVERY:""
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in the textbox ""Address""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user enters text ""<extension>"" in the textbox ""Ext. (Optional)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Hdcc"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Hdcc"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+
+    Examples:
+      | firstName | lastName   | address            | city        | province | postalCode | phone      | extension |
+      | Testuser  | Automation | 428 Ellesmere Road | Scarborough | Ontario  | M1R 4E6    | 4704243224 | 8921      |"
+User should able to Place order on BODFS SKU with LPT option using Visa Card,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user clicks on the checkbox "" Add customized service at  ""
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user selects the radio button "" Express Delivery: FLAT FEE ""
+    Then the user clicks on the scheduled express delivery with postal code ""<postalCode>""
+    Then the user waits for webelement ""speed-option"" with html attribute ""class"" to be visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in the textbox ""Address""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<phone>"" in the textbox ""Phone""
+    Then the user click on ""Continue""
+    Then the user clicks on the webelement with html tag ""aria-controls"" as ""services-schedule-date-picker""
+    Then the user clicks on the element with html tag ""aria-disabled"" as ""false"" at index ""1""
+    Then the user click on ""Done""
+    Then the user enters value ""<preferredTime>"" in dropdown ""Preferred Arrival""
+    Then the user click on ""Submit""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-checkbox__faux-checkbox""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Hdcc"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Hdcc"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+
+    Examples:
+      | firstName | lastName    | address          | city       | province | postalCode | phone      | preferredTime           | 
+      | TestUser  | WebdriverIO | 428 ELLESMERE RD | Scarborough| Ontario  | M1R4E6     | 4700148224 |  8:00 a.m. - 11:00 a.m. | "
+User should able to Place Order with Paypal,"Then the user enters text ""9765"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user selects the radio button "" Express Delivery: FLAT FEE ""
+    Then the user clicks on the scheduled express delivery with postal code ""<postalCode>""
+    Then the user waits for webelement ""speed-option"" with html attribute ""class"" to be visible
+    Then the user validates if ""SCHEDULED DELIVERY:"" text is visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in the textbox ""Address""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<phoneNum>"" in the textbox ""Phone""
+    Then the user enters text ""<extension>"" in the textbox ""Ext. (Optional)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user waits for webelement ""acl-tabs__item"" with html attribute ""class"" to be visible
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-icon acl-tabs__item-icon-title""
+    Then the user clicks on the webelement with html tag ""classname"" as ""acl-ml--x-small acl-mb--x-small""
+    Then the user waits for webelement ""Log in to your PayPal account"" with html attribute ""data-title"" to be visible
+    Then the user enters text ""<paypalUserName>"" in textbox with placeholder ""Email or mobile number""
+    Then the user clicks on the webelement with html tag ""id"" as ""btnNext""
+    Then the user enters text ""<paypalPassword>"" in textbox with placeholder ""Password""
+    Then the user clicks on the webelement with html tag ""id"" as ""btnLogin""
+    Then the user click on ""Complete Purchase""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+    Then the user validates if "" EXPRESS DELIVERY: "" text is visible
+
+    Examples:
+      | postalCode | firstName | lastName | address            | city        | province | phoneNum   | extension | paypalUserName  | paypalPassword |
+      | M1R 4E6    | Luther    | King     | 428 Ellesmere road | Scarborough | Ontario  | 2365678914 | 4567888   | cabuyer2@thd.ca | 11111111       |"
+User should able to Place Order with PLCC Card,"Then the user enters text ""7001"" in textbox with placeholder ""Postal Code, City, or Store Number""
+    Then the user clicks on the webelement with html tag ""title"" as ""Search""
+    Then the user waits for webelement ""hdca-store-list-item__column-store"" with html attribute ""class"" to be visible
+    Then the user click on ""Select""
+    Then the user enters text sku in textbox with placeholder ""What can we help you find?""
+    Then the user clicks on the webelement with html tag ""class"" as ""acl-action-button""
+    Then the user waits for webelement ""hdca-product"" with html attribute ""class"" to be visible
+    Then the user add product to cart
+    Then the user click on ""View Cart""
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user waits for webelement ""hdca-cart__header-title"" with html attribute ""class"" to be visible
+    Then the user selects the radio button "" Express Delivery: FLAT FEE ""
+    Then the user clicks on the scheduled express delivery with postal code ""<postalCode>""
+    Then the user waits for webelement ""speed-option"" with html attribute ""class"" to be visible
+    Then the user validates if ""SCHEDULED DELIVERY:"" text is visible
+    Then the user click on ""Checkout Now""
+    Then the user waits for text ""Secure Checkout"" to be visible
+    Then the user click on ""Checkout as Guest""
+    Then the user waits for webelement ""hdca-checkout-header__title"" with html attribute ""class"" to be visible
+    Then the user enters random email in the textbox ""Email (for receipt)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""ctHidden acl-p--x-small"" is visible
+    Then the user enters text ""<firstName>"" in the textbox ""First Name""
+    Then the user enters text ""<lastName>"" in the textbox ""Last Name""
+    Then the user enters text ""<address>"" in the textbox ""Address""
+    Then the user enters text ""<city>"" in the textbox ""City""
+    Then the user enters value ""<province>"" in dropdown ""Province""
+    Then the user enters text ""<phoneNum>"" in the textbox ""Phone""
+    Then the user enters text ""<extension>"" in the textbox ""Ext. (Optional)""
+    Then the user click on ""Continue""
+    Then the user validates if webelement with html attribute ""class"" as ""acl-bg-color--default acl-tabs"" is visible
+    Then the user waits for webelement ""acl-tabs__item"" with html attribute ""class"" to be visible
+    Then the user switches to the frame ""__zoid__card_sdk""
+    Then the user enters the ""Hdcc"" card details
+    Then the user switches to the parent frame
+    Then the user enters billing details for ""Hdcc"" card
+    Then the user click on ""Continue""
+    Then the user waits for webelement ""acl-button--theme--primary"" with html attribute ""class"" to be visible
+    Then the user click on ""Place Order""
+    Then the user waits for webelement ""acl-container acl-container--theme-dark acl-p--small"" with html attribute ""class"" to be visible
+    Then the user validates if "" Your order was successful. "" text is visible
+    Then the user validates if the webelement with html attribute ""class"" as ""acl-col--12 acl-text-size--x-large"" has text ""Order Number""
+    Then the user validates if "" EXPRESS DELIVERY: "" text is visible
+
+    Examples:
+      | postalCode | firstName | lastName | address            | city        | province | phoneNum   | extension | 
+      | M1R 4E6    | Luther    | King     | 428 Ellesmere road | Scarborough | Ontario  | 2365678914 | 4567888   |"
